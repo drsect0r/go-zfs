@@ -65,6 +65,16 @@ func (z *Zpool) Snapshots() ([]*Dataset, error) {
 	return Snapshots(z.Name)
 }
 
+// Volumes returns a slice of all ZFS volumes in a zpool.
+func (z *Zpool) Volumes() ([]*Dataset, error) {
+	return Volumes(z.Name)
+}
+
+// Filesystems returns a slice of all ZFS filesystems in a zpool.
+func (z *Zpool) Filesystems() ([]*Dataset, error) {
+	return Filesystems(z.Name)
+}
+
 // CreateZpool creates a new ZFS zpool with the specified name, properties,
 // and optional arguments.
 // A full list of available ZFS properties and command-line arguments may be
